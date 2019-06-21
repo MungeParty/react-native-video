@@ -60,8 +60,9 @@ namespace ReactNativeVideo
         [ReactProp("resizeMode")]
         public void SetResizeMode(ReactVideoView view, string resizeMode)
         {
-            throw new NotImplementedException("Resize Mode has not been implemented for WPF.");
-            // view.Stretch = (Stretch)int.Parse(resizeMode);
+            var brush = (DrawingBrush)view.Background;
+            if (resizeMode != null && brush != null)
+                brush.Stretch = (Stretch)int.Parse(resizeMode);
         }
 
         [ReactProp("repeat")]
