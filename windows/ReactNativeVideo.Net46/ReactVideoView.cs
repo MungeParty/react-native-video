@@ -158,6 +158,11 @@ namespace ReactNativeVideo
                 _player.BufferingStarted -= OnBufferingStarted;
                 _player.BufferingEnded -= OnBufferingEnded;
                 // _player.SeekCompleted -= OnSeekCompleted;
+
+                // null out player
+                _player.Close();
+                _drawing.Player = null;
+                _player = null;
             }
 
             _timer.Stop();
